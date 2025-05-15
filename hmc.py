@@ -8,6 +8,7 @@ from hansken.connect import connect_project, connect
 from hansken.remote import ProjectContext
 
 from config import environment_config
+from config.environment_config import interactive, verify
 from config.plugins_config import enabled_plugins
 from hmclib.hmc_plugin_class import HMCStandardResult, HMCStandardPlugin
 from hmclib.plugin_registry import plugin_registry
@@ -106,7 +107,7 @@ def log_summary(num_plugins, num_cases, start_time):
 def run_main():
     args = parse_args()
 
-    end_point = environment_config.endpoint
+    end_point = environment_config.gatekeeper
     key_store = environment_config.keystore
     user_name = environment_config.username
     password = environment_config.password
@@ -115,7 +116,8 @@ def run_main():
                          keystore=key_store,
                          username=user_name,
                          password=password,
-                         interactive=True)
+                         interactive=interactive,
+                         verify=verify)
 
     case_ids = get_case_ids(connection, args.case_ids)
     plugin_classes = load_enabled_plugins()
@@ -135,7 +137,8 @@ def run_main():
                                           keystore=key_store,
                                           username=user_name,
                                           password=password,
-                                          interactive=True)
+                                          interactive=interactive,
+                                          verify=verify)
 
         with current_context:
 
