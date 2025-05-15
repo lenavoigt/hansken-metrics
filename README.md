@@ -25,7 +25,7 @@ Before you can run the metric collection with HMC, you need to:
 1. Create a configuration file `environment_config.py` file for Hansken's Python API access to your Hansken context.
 2. *(Optionally)* Select the plugins that should be enabled in your metric collection run. Per default, all currently supported plugins are enabled.
 
-These steps are detailed below. 
+These steps are detailed below. *Note: The provided commands use Unix-style syntax. If you're using Windows, please perform the steps analogously.*
 
 ## Virtual Environment Setup and Dependency Installation
 
@@ -45,7 +45,7 @@ The file `environment_config.example.py` is provided as a template. Before you c
 ```
 $ cp config/environment_config.example.py environment_config.py
 ```
-Afterward, update the `environment_config.example.py`file with your Hansken context credentials and connection details. See the inline comments in the example for guidance.
+Afterward, update the `environment_config.example.py`file with your Hansken connection details. 
 
 ## Selection of Plugins
 
