@@ -1,6 +1,6 @@
 # Hansken Metric Collector
 
-The Hansken Metric Collector (HMC) is a tool that automates the collection of metrics from Hansken cases via the Hansken Python API, summarizing the results in a csv file.
+The Hansken Metric Collector (HMC) is a tool that automates the collection of metrics from Hansken cases via the [Hansken Python API](https://training.hansken.org/docs/python/), summarizing the results in a csv file.
 
 ## Usage
 
