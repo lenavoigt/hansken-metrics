@@ -4,7 +4,7 @@ enabled_plugins = [
 
     # General
     "browser_history_count",
-    "browser_history_category",
+    # Not available at the moment: "browser_history_category",
     "calendar",
     "contacts",
     "emails",
@@ -19,7 +19,7 @@ enabled_plugins = [
     "os_present",
 
     # Phone
-    "application_category",
+    # Not available at the moment: "application_category",
     "application_count",
     "application_presence",
     "calls",
