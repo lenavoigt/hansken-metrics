@@ -43,7 +43,7 @@ $ pip install -r requirements.txt
 
 The file `environment_config.example.py` is provided as a template. Before you can run HMC you need to copy it to `environment_config.py`:
 ```
-$ cp config/environment_config.example.py environment_config.py
+$ cp config/environment_config.py environment_config.py
 ```
 Afterward, update the `environment_config.example.py`file with your Hansken connection details. 
 
