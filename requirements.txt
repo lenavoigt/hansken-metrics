@@ -1,0 +1,1 @@
+hansken @ https://training.hansken.org/docs/python/_downloads/43c0f03c6adc7437cfb7524e68e8c43b/hansken-2024.3.29-py3-none-any.whl
