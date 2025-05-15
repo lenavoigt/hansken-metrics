@@ -1,0 +1,16 @@
+# Avoid commiting results, exclude all files in the results directory (output data, generated metrics)
+results/*
+
+# Avoid committing local configuration details
+config/plugins_config.py
+config/environment_config.py
+
+# Exclude plugin files for metrics that are currently unavailable 
+hmcplugins/general/browser_history_category.py
+hmcplugins/phone/application_category.py
+
+# Ignore Python venv, cache directories and IDE-specific files
+__pycache__
+venv/*
+.venv/*
+.idea/
