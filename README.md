@@ -42,9 +42,9 @@ $ pip install -r requirements.txt
 The file `environment_config.example.py` is provided as a template. Before you can run HMC you need to copy it to `environment_config.py`:
 ```
 $ cp config/environment_config.example.py environment_config.py
-
-Afterward, you need to modify the config file as follows ... (tbd)
 ```
+Afterward, you need to modify the config file as follows ... (tbd)
+
 ## Selection of Plugins
 
 The file `config/plugins_config.py` contains a list of all currently supported metrics. By thefault, they are all enabled. To disable a plugin, comment out the respective line of the list (using `#`):
@@ -55,6 +55,6 @@ enabled_plugins = [
     "calendar",			# enabled metric	  	
     "contacts",			# enabled metric
     ...
-    ]
+]
 ```
 
