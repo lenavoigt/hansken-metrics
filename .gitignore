@@ -1,5 +1,5 @@
-# Avoid commiting results, exclude all files in the results directory (output data, generated metrics)
-results/*
+# Avoid commiting output, exclude all files in the output directory (output data, generated metrics)
+output/*
 
 # Avoid committing local configuration details
 config/plugins_config.py

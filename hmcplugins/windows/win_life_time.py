@@ -8,8 +8,8 @@ from hansken.connect import ProjectContext
 from hansken.recipes import export
 
 from hmclib.hmc_plugin_class import HMCStandardPlugin
-from util.datetime_conversions import get_year_month_day_str, get_time_delta_days
-from util.hansken_search import get_registry_value
+from utils.datetime_conversions import get_year_month_day_str, get_time_delta_days
+from hmclib.hansken_search import get_registry_value
 
 
 class WinLifeTime(HMCStandardPlugin):

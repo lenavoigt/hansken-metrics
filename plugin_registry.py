@@ -1,3 +1,5 @@
+from typing import List
+
 from hmcplugins.cross_case import case_images
 from hmcplugins.general import file_mime_class, browser_history_count, browser_history_category, calendar, contacts, \
     emails, file_categories, file_extensions, file_mime_types, financial_traces, general_info, locations, trace_types, \
@@ -47,3 +49,15 @@ plugin_registry = {
     "win_lnk_count": win_lnk_count.WinLnkCount,
     "win_event_log_count": win_event_log_count.WinEventLogCount,
 }
+
+def load_enabled_plugins(enabled_plugins: List[str]):
+    plugins = []
+
+    for name in enabled_plugins:
+        plugin_class = plugin_registry.get(name)
+        if plugin_class:
+            plugins.append(plugin_class())
+        else:
+            print(f"Plugin not found in registry: {name} \nSkipping...")
+
+    return plugins

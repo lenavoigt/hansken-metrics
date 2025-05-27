@@ -6,16 +6,16 @@ from typing import List, Dict
 
 
 def generate_result_file_names():
-    os.makedirs('results', exist_ok=True)
+    os.makedirs('output', exist_ok=True)
     timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    json_filename = f"results/summary_dict_{timestamp}.jsonl"
-    tsv_filename = f"results/data_table_{timestamp}.tsv"
-    return json_filename, tsv_filename, f"results/{timestamp}.log"
+    json_filename = f"output/summary_dict_{timestamp}.jsonl"
+    tsv_filename = f"output/data_table_{timestamp}.tsv"
+    return json_filename, tsv_filename, f"output/{timestamp}.log"
 
 
 def write_single_evidence_results_to_json(project_id: str, evidence_id: str, result_list: List[dict],
                                           json_file_name: str):
-    print(f'    Writing results to {json_file_name}')
+    print(f'    Writing output to {json_file_name}')
     single_evidence_json_dump = json.dumps({
         "project": project_id,
         "evidence_id": evidence_id,

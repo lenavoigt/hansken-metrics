@@ -11,23 +11,13 @@ from config import environment_config
 from config.environment_config import interactive, verify
 from config.plugins_config import enabled_plugins
 from hmclib.hmc_plugin_class import HMCStandardResult, HMCStandardPlugin
-from hmclib.plugin_registry import plugin_registry
-from util.hansken_search import get_evidence_ids
-from util.write_to_file import write_single_evidence_results_to_tsv, write_single_evidence_results_to_json, \
+from plugin_registry import load_enabled_plugins
+from hmclib.hansken_search import get_evidence_ids
+from utils.write_to_file import write_single_evidence_results_to_tsv, write_single_evidence_results_to_json, \
     generate_result_file_names, write_evidence_names_to_csv
 
 
-def load_enabled_plugins():
-    plugins = []
 
-    for name in enabled_plugins:
-        plugin_class = plugin_registry.get(name)
-        if plugin_class:
-            plugins.append(plugin_class())
-        else:
-            print(f"Plugin not found in registry: {name} \nSkipping...")
-
-    return plugins
 
 
 def run_plugins(context: ProjectContext, evidence_id: str, plugins: List[HMCStandardPlugin],
@@ -120,7 +110,7 @@ def run_main():
                          verify=verify)
 
     case_ids = get_case_ids(connection, args.case_ids)
-    plugin_classes = load_enabled_plugins()
+    plugin_classes = load_enabled_plugins(enabled_plugins)
 
     json_filename, csv_filename, log_filename = generate_result_file_names()
 

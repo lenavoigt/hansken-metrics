@@ -3,7 +3,7 @@ from typing import Optional, List
 from hansken.connect import ProjectContext
 
 from hmclib.hmc_plugin_class import HMCStandardPlugin
-from util.hansken_search import bucket_name_present
+from hmclib.hansken_search import bucket_name_present
 
 
 class ApplicationPresence(HMCStandardPlugin):

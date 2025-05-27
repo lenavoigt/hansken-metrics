@@ -3,7 +3,7 @@ from typing import Optional
 from hansken.connect import ProjectContext
 
 from hmclib.hmc_plugin_class import HMCStandardPlugin
-from util.hansken_search import get_registry_value
+from hmclib.hansken_search import get_registry_value
 
 
 class WinVersion(HMCStandardPlugin):

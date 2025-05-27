@@ -4,7 +4,7 @@ from typing import Optional
 from hansken.connect import ProjectContext
 
 from hmclib.hmc_plugin_class import HMCStandardPlugin
-from util.hansken_search import count_traces_with_hql, get_buckets_with_hql
+from hmclib.hansken_search import count_traces_with_hql, get_buckets_with_hql
 
 
 class WinPrefetchCount(HMCStandardPlugin):
