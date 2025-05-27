@@ -6,7 +6,7 @@ config/plugins_config.py
 config/environment_config.py
 
 # Exclude plugin files for metrics that are currently unavailable
-hmcplugins/phone/application_category.py
+# hmcplugins/phone/application_category.py
 
 # Ignore Python venv, cache directories and IDE-specific files
 __pycache__
