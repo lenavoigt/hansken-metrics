@@ -4,20 +4,16 @@ import sys
 import time
 from typing import List
 
-from hansken.connect import connect_project, connect
+from hansken.connect import connect_project
 from hansken.remote import ProjectContext
 
-from config import environment_config
-from config.environment_config import interactive, verify
 from config.plugins_config import enabled_plugins
+from hmclib.hansken_connection_config import get_connection_details, establish_connection
+from hmclib.hansken_search import get_evidence_ids
 from hmclib.hmc_plugin_class import HMCStandardResult, HMCStandardPlugin
 from plugin_registry import load_enabled_plugins
-from hmclib.hansken_search import get_evidence_ids
 from utils.write_to_file import write_single_evidence_results_to_tsv, write_single_evidence_results_to_json, \
     generate_result_file_names, write_evidence_names_to_csv
-
-
-
 
 
 def run_plugins(context: ProjectContext, evidence_id: str, plugins: List[HMCStandardPlugin],
@@ -97,17 +93,8 @@ def log_summary(num_plugins, num_cases, start_time):
 def run_main():
     args = parse_args()
 
-    end_point = environment_config.gatekeeper
-    key_store = environment_config.keystore
-    user_name = environment_config.username
-    password = environment_config.password
-
-    connection = connect(endpoint=end_point,
-                         keystore=key_store,
-                         username=user_name,
-                         password=password,
-                         interactive=interactive,
-                         verify=verify)
+    hansken_config = get_connection_details()
+    connection = establish_connection(hansken_config)
 
     case_ids = get_case_ids(connection, args.case_ids)
     plugin_classes = load_enabled_plugins(enabled_plugins)
@@ -122,13 +109,13 @@ def run_main():
     start_time = time.time()
 
     for each_case_id in case_ids:
-        current_context = connect_project(endpoint=end_point,
+        current_context = connect_project(endpoint=hansken_config.endpoint,
                                           project=each_case_id,
-                                          keystore=key_store,
-                                          username=user_name,
-                                          password=password,
-                                          interactive=interactive,
-                                          verify=verify)
+                                          keystore=hansken_config.keystore,
+                                          username=hansken_config.username,
+                                          password=hansken_config.password,
+                                          interactive=hansken_config.interactive,
+                                          verify=hansken_config.verify)
 
         with current_context:
 

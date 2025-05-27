@@ -1,6 +1,6 @@
 # This configuration file is used to load user specific configurations (which gatekeeper/keystore etc.) need to be used for connecting with Hansken
 
-gatekeeper = f''
+endpoint = f''
 
 keystore = f''
 
@@ -8,6 +8,6 @@ username = f''
 
 password = f''
 
-verify = True
+verify = None # Set to True or False
 
-interactive = True
+interactive = None # Set to True or False

@@ -47,7 +47,7 @@ The file `environment_config.example.py` is provided as a template. Before you c
 ```
 $ cp config/environment_config.py environment_config.py
 ```
-Afterward, update the `environment_config.example.py`file with your Hansken connection details. 
+Afterward, we recommend updating the `environment_config.py` file with your Hansken connection details. Connection details you don't provide in the config file (by leaving their values as is) can be provided at runtime instead (e.g. to provide the password at runtime instead of using the config file).
 
 ## Selection of Plugins
 
