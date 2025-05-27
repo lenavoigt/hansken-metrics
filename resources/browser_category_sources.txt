@@ -1,0 +1,5 @@
+Banking:
+- Top 50 (May 1,2025) worldwide, Top 5 Netherlands and Top 5 Germany: https://www.similarweb.com/top-websites/finance/banking-credit-and-lending/;
+- Top 10 biggest overall, top 10 biggest Germany (by assets): https://www.bankingsupervision.europa.eu/ecb/pub/pdf/ssm.listofsupervisedentities202504.en.pdf?ed312566420fb6e1349407640c184bfc
+Crypto: Top 60 (May 26, 2025) https://coinmarketcap.com/rankings/exchanges/
+All other categories: exemplary ChatGPT output

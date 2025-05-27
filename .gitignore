@@ -5,8 +5,7 @@ output/*
 config/plugins_config.py
 config/environment_config.py
 
-# Exclude plugin files for metrics that are currently unavailable 
-hmcplugins/general/browser_history_category.py
+# Exclude plugin files for metrics that are currently unavailable
 hmcplugins/phone/application_category.py
 
 # Ignore Python venv, cache directories and IDE-specific files
