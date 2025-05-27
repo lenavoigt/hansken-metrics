@@ -19,7 +19,7 @@ enabled_plugins = [
     "os_present",
 
     # Phone
-    # Not available at the moment: "application_category",
+    "application_category",
     "application_count",
     "application_presence",
     "calls",

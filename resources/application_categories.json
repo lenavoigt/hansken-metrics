@@ -1,0 +1,240 @@
+{
+  "Messaging": {
+    "android": [
+      "com.whatsapp",
+      "org.telegram.messenger",
+      "com.discord",
+      "com.facebook.orca",
+      "com.microsoft.skype",
+      "com.slack",
+      "org.thoughtcrime.securesms"
+    ],
+    "ios": [
+      "net.whatsapp.WhatsApp",
+      "ph.telegra.Telegraph",
+      "com.hammerandchisel.discord",
+      "com.facebook.Messenger",
+      "com.skype.skype",
+      "com.tinyspeck.chatlyio",
+      "org.whispersystems.signal"
+    ]
+  },
+  "Social Media": {
+    "android": [
+      "com.facebook.katana",
+      "com.instagram.android",
+      "com.twitter.android",
+      "com.reddit.frontpage",
+      "com.snapchat.android",
+      "com.zhiliaoapp.musically",
+      "com.linkedin.android"
+    ],
+    "ios": [
+      "com.facebook.Facebook",
+      "com.burbn.instagram",
+      "com.atebits.Tweetie2",
+      "com.reddit.Reddit",
+      "com.toyopagroup.picaboo",
+      "com.zhiliaoapp.musically",
+      "com.linkedin.LinkedIn"
+    ]
+  },
+  "Shopping": {
+    "android": [
+      "com.amazon.mShop.android.shopping",
+      "com.ebay.mobile",
+      "com.alibaba.aliexpresshd",
+      "com.walmart.android",
+      "com.etsy.android",
+      "com.target.ui",
+      "com.bestbuy.android"
+    ],
+    "ios": [
+      "com.amazon.Amazon",
+      "com.ebay.iphone",
+      "com.alibaba.aliexpresshd",
+      "com.walmart.electronics",
+      "com.etsy.etsyforios",
+      "com.target.Target",
+      "com.bestbuy.bestbuy"
+    ]
+  },
+  "Streaming": {
+    "android": [
+      "com.google.android.youtube",
+      "com.netflix.mediaclient",
+      "com.spotify.music",
+      "tv.twitch.android.app",
+      "com.hulu.plus",
+      "com.disney.disneyplus",
+      "com.amazon.avod.thirdpartyclient"
+    ],
+    "ios": [
+      "com.google.ios.youtube",
+      "com.netflix.Netflix",
+      "com.spotify.client",
+      "tv.twitch",
+      "com.hulu.plus",
+      "com.disney.disneyplus",
+      "com.amazon.aiv.AIVApp"
+    ]
+  },
+  "Webmail": {
+    "android": [
+      "com.google.android.gm",
+      "com.microsoft.office.outlook",
+      "yahoo.mobile.client.android.mail",
+      "com.apple.android.mail",
+      "com.zoho.mail",
+      "com.protonmail.android"
+    ],
+    "ios": [
+      "com.google.Gmail",
+      "com.microsoft.Office.Outlook",
+      "com.yahoo.Aerogram",
+      "com.apple.mobilemail",
+      "com.zoho.mail",
+      "ch.protonmail.protonmail"
+    ]
+  },
+  "News": {
+    "android": [
+      "com.cnn.mobile.android.phone",
+      "bbc.mobile.news.ww",
+      "com.nytimes.android",
+      "com.thomsonreuters.reuters",
+      "com.guardian",
+      "com.foxnews.android",
+      "org.npr.nprnews"
+    ],
+    "ios": [
+      "com.cnn.CNN",
+      "uk.co.bbc.news",
+      "com.nytimes.NYTimes",
+      "com.thomsonreuters.reuters",
+      "com.guardian",
+      "com.foxnews.foxnews",
+      "org.npr.nprnews"
+    ]
+  },
+  "Travel": {
+    "android": [
+      "com.booking",
+      "com.airbnb.android",
+      "com.expedia.bookings",
+      "com.ubercab",
+      "me.lyft.android",
+      "com.tripadvisor.tripadvisor",
+      "net.skyscanner.android.main"
+    ],
+    "ios": [
+      "com.booking.BookingApp",
+      "com.airbnb.app",
+      "com.expedia.bookings",
+      "com.ubercab.UberClient",
+      "me.lyft.ios",
+      "com.tripadvisor.tripadvisor",
+      "net.skyscanner.Skyscanner"
+    ]
+  },
+  "Insurance": {
+    "android": [
+      "com.geico.mobile",
+      "com.statefarm.pocketagent",
+      "com.progressive.android",
+      "com.allstate.mobile.android",
+      "com.lmig.mylibertyMO",
+      "com.aetna.aetnaapp",
+      "com.metlife"
+    ],
+    "ios": [
+      "com.geico.mobile.iphone",
+      "com.statefarm.pocketagent",
+      "com.progressive.insurance",
+      "com.allstate.mobile",
+      "com.lmig.myliberty",
+      "com.aetna.aetnaapp",
+      "com.metlife.ios"
+    ]
+  },
+  "Search Engines": {
+    "android": [
+      "com.google.android.googlequicksearchbox",
+      "com.microsoft.bing",
+      "com.duckduckgo.mobile.android",
+      "com.yahoo.mobile.client.android.search",
+      "com.baidu.searchbox",
+      "ru.yandex.searchplugin",
+      "com.startpage.mobile"
+    ],
+    "ios": [
+      "com.google.GoogleMobile",
+      "com.microsoft.bing",
+      "com.duckduckgo.mobile.ios",
+      "com.yahoo.search",
+      "com.baidu.BaiduBrowser",
+      "ru.yandex.mobile",
+      "com.startpage.ios"
+    ]
+  },
+  "Games": {
+    "android": [
+      "com.supercell.clashofclans",
+      "com.king.candycrushsaga",
+      "com.riotgames.league.wildrift"
+    ],
+    "ios": [
+      "com.supercell.clashofclans",
+      "com.king.candycrushsaga",
+      "com.riotgames.league.wildrift"
+    ]
+  },
+  "Education": {
+    "android": [
+      "com.duolingo",
+      "org.khanacademy.android",
+      "com.coursera.android"
+    ],
+    "ios": [
+      "com.duolingo.DuolingoMobile",
+      "org.khanacademy.Khan-Academy",
+      "org.coursera.coursera"
+    ]
+  },
+  "Health and Fitness": {
+    "android": [
+      "com.fitbit.FitbitMobile",
+      "com.myfitnesspal.android",
+      "com.peloton.app"
+    ],
+    "ios": [
+      "com.fitbit.FitbitMobile",
+      "com.myfitnesspal.myfitnesspal",
+      "com.onepeloton.Peloton"
+    ]
+  },
+  "Finance": {
+    "android": [
+      "com.coinbase.android",
+      "com.paypal.android.p2pmobile",
+      "com.chase.sig.android"
+    ],
+    "ios": [
+      "com.coinbase.consumer",
+      "com.yourcompany.PayPal",
+      "com.jpmorgan.chase"
+    ]
+  },
+  "Productivity": {
+    "android": [
+      "com.microsoft.office.word",
+      "com.todoist",
+      "com.google.android.keep"
+    ],
+    "ios": [
+      "com.microsoft.Office.Word",
+      "com.todoist.Todoist",
+      "com.google.Keep"
+    ]
+  }
+}

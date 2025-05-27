@@ -1,0 +1,4 @@
+Note: hard to draw the line for some categories (e.g. Social Media and Messaging), yet each application only assigned to one category (for now)
+
+Package names per category:
+- Example ChatGPT output (for now)
