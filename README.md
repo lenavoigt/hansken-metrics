@@ -4,6 +4,8 @@ The Hansken Metric Collector (HMC) is a tool that automates the collection of me
 
 *Disclaimer: You need to have access to [Hansken](https://www.hansken.nl/) to use HMC. If you don't, but still would like to collect metrics from your digital forensic evidence, you can refer to our tool [MDP](https://github.com/lenavoigt/mass-disk-processor) that uses open-source tools for the metric collection. MDP is, however, currently restricted to disk image metrics and focusses on metrics for Windows systems.*
 
+*Tested with Python 3.10.*
+
 ## Usage
 
 To retrieve metrics from Hansken cases, run the following command within **your project's virtual environment** (see setup instructions below):
@@ -34,7 +36,7 @@ These steps are detailed below. *Note: The provided commands use Unix-style synt
 We recommend setting up a virtual environment to use HMC and installing the dependencies with the following commands:
 
 ```
-$ python3 -m venv venv
+$ python3.10 -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
