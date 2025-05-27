@@ -4,7 +4,7 @@ enabled_plugins = [
 
     # General
     "browser_history_count",
-    # Not available at the moment: "browser_history_category",
+    "browser_history_category",
     "calendar",
     "contacts",
     "emails",
