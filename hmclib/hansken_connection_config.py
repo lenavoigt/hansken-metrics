@@ -19,6 +19,12 @@ class HanskenConnectionConfig:
 
 
 def get_connection_details() -> HanskenConnectionConfig:
+    """
+    Build Hansken connection configuration using values from environment_config, or
+    prompting the user interactively for any missing fields.
+
+    :return: populated HanskenConnectionConfig object
+    """
     end_point = environment_config.endpoint
     key_store = environment_config.keystore
     user_name = environment_config.username
@@ -28,29 +34,28 @@ def get_connection_details() -> HanskenConnectionConfig:
 
     if not end_point:
         try:
-            end_point = input('Please enter the login details for your Hansken connection -- end point / gate keeper: ')
+            end_point = input('Enter Hansken end point / gate keeper: ')
         except Exception as e:
             print("Error reading end point / gate keeper details:", e)
             sys.exit(1)
 
     if not key_store:
         try:
-            key_store = input('Please enter the login details for your Hansken connection -- key store: ')
+            key_store = input('Enter Hansken key store: ')
         except Exception as e:
             print("Error reading key store details:", e)
             sys.exit(1)
 
     if not user_name:
         try:
-            user_name = input('Please enter the login details for your Hansken connection -- user name: ')
+            user_name = input('Enter user name: ')
         except Exception as e:
             print("Error reading user name:", e)
             sys.exit(1)
 
     if not password:
         try:
-            password = getpass.getpass(
-                prompt='Please enter the login details for your Hansken connection -- password: ')
+            password = getpass.getpass(prompt='Enter password: ')
         except Exception as e:
             print("Error reading password:", e)
             sys.exit(1)
@@ -76,6 +81,13 @@ def get_connection_details() -> HanskenConnectionConfig:
 
 
 def establish_connection(cfg: HanskenConnectionConfig) -> Connection:
+    """
+    Establish and return Hansken connection using the provided configuration.
+    Exits the program if the connection cannot be established.
+
+    :param cfg: Hansken connection configuration object
+    :return: Hansken connection object
+    """
     try:
         connection = connect(endpoint=cfg.endpoint,
                              keystore=cfg.keystore,
@@ -83,20 +95,12 @@ def establish_connection(cfg: HanskenConnectionConfig) -> Connection:
                              password=cfg.password,
                              interactive=cfg.interactive,
                              verify=cfg.verify)
-    except Exception as e:
-        print("[ERROR] ❌ Invalid connection details.")
-        print(
-            "\tPlease check the configuration details provided for the \033[1;31mend point / gate keeper\033[0m via the command line or in config/environment_config.py!")
-        print(f"\t{e})")
-        sys.exit(1)
-
-    try:
         connection.open()
         connection.close()
     except Exception as e:
-        print("[ERROR] ❌ Couldn't establish Hansken connection.")
+        print("[ERROR] ❌ Failed to open Hansken connection.")
         print(
-            "\tPlease check the configuration details provided for the \033[1;31muser name, password, and key store\033[0m via the command line or in config/environment_config.py!")
+            "\tCheck your \033[1;31muser name, password, key store, and end point / gate keeper\033[0m in config/environment_config.py or CLI input.")
         print(f"\t{e})")
         sys.exit(1)
 
