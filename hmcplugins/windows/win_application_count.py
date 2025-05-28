@@ -21,8 +21,8 @@ class WinApplicationCount(HMCStandardPlugin):
 
     def count_applications_uninstall(self) -> int | None:
         registry_key = '\'/Microsoft/Windows/CurrentVersion/Uninstall\''
-        return count_children_of_registry_key(self.context, self.evidence_id, registry_key)
+        return count_children_of_registry_key(self.context, registry_key, self.evidence_id)
 
     def count_applications_app_paths(self) -> int | None:
         registry_key = '\'/Microsoft/Windows/CurrentVersion/App\ Paths\''
-        return count_children_of_registry_key(self.context, self.evidence_id, registry_key)
+        return count_children_of_registry_key(self.context, registry_key, self.evidence_id)

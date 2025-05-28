@@ -52,7 +52,7 @@ def count_traces_of_type(context: ProjectContext, type_to_search: str, evidence_
 
 
 def count_traces_with_hql(context: ProjectContext, hql_query: str, facet_value_to_count: str,
-                          facet_for_filtering='type',
+                          facet_for_filtering: str = 'type',
                           evidence_id: Optional[str] = None) -> int | None:
     """
     Count the number of traces that match a hql query.
@@ -91,8 +91,8 @@ def count_traces_with_hql(context: ProjectContext, hql_query: str, facet_value_t
 
 
 def get_buckets_with_hql(context: ProjectContext, hql_query: str, facet_for_filtering: str = 'type',
-                         use_range_facet=False,
-                         evidence_id: Optional[str] = None, range_facet_scale: str = 'linear') -> List[Tuple[str, int]] | None:
+                         use_range_facet: bool = False, evidence_id: Optional[str] = None,
+                         range_facet_scale: str = 'linear') -> List[Tuple[str, int]] | None:
     """
     Retrieve a list of buckets (with name and count per bucket) that match a hql query.
 
@@ -145,7 +145,7 @@ def get_buckets_with_hql(context: ProjectContext, hql_query: str, facet_for_filt
 
 
 def bucket_name_present(context: ProjectContext, hql_query: str, facet_for_filtering: str,
-                        bucket_names_to_search: List[str], allow_partial_match=False,
+                        bucket_names_to_search: List[str], allow_partial_match: bool = False,
                         evidence_id: Optional[str] = None) -> bool | None:
     """
     Checks if any of the provided names is present as a bucket name in a list of buckets retrieved.
@@ -195,22 +195,51 @@ def get_registry_value(context: ProjectContext, evidence_id: str, registry_key: 
     return search_result
 
 
-def count_children_of_registry_key(context: ProjectContext, evidence_id: str, registry_key: str) -> int | None:
+def count_children_of_registry_key(context: ProjectContext, registry_key: str,
+                                   evidence_id: Optional[str] = None) -> int | None:
+    """
+    Counts the number of registry entries (children) directly under the specified Windows registry key.
+
+    :param context: Hansken project context object.
+    :param registry_key: Registry key path, e.g., "/Microsoft/Windows/CurrentVersion/Uninstall".
+    :param evidence_id: Optional. If provided, restricts the count to a single evidence item.
+                        Otherwise, counts children across all Windows systems in the project.
+    :return: Number of registry entries (children), or None if count could not be determined
+    """
     hql_query = r'parent->{type:registryEntry registryEntry.key:' + registry_key + r'}'
     count = count_traces_with_hql(context=context, hql_query=hql_query, facet_value_to_count='registryEntry',
                                   evidence_id=evidence_id)
     return count
 
 
-def get_children_of_registry_key(context: ProjectContext, evidence_id: str, registry_key) -> List[Tuple[
-    str, int]] | None:
+def get_children_of_registry_key(context: ProjectContext, registry_key: str,
+                                 evidence_id: Optional[str] = None) -> List[str] | None:
+    """
+        Returns the names of registry entries (children) directly under the specified Windows registry key.
+
+        :param context: Hansken project context object.
+        :param registry_key: Registry key path, e.g., "/Microsoft/Windows/CurrentVersion/Uninstall".
+        :param evidence_id: Optional. If provided, restricts the results to a single evidence item.
+                            Otherwise, returns children across all Windows systems in the project.
+        :return: list of registry entries (children), or None if no children where found for the specified key
+    """
     hql_query = r'parent->{type:registryEntry registryEntry.key:' + registry_key + r'}'
     registry_children_present = get_buckets_with_hql(context=context, hql_query=hql_query,
                                                      facet_for_filtering='registryEntry.name', evidence_id=evidence_id)
-    return registry_children_present
+    return [registry_entry for registry_entry, _ in registry_children_present]
 
 
-def count_all_descendants_of_registry_key(context: ProjectContext, evidence_id: str, registry_key) -> int | None:
+def count_all_descendants_of_registry_key(context: ProjectContext, registry_key: str,
+                                          evidence_id: Optional[str] = None) -> int | None:
+    """
+        Counts the number of all registry entries (all descendants) under the specified Windows registry key.
+
+        :param context: Hansken project context object.
+        :param registry_key: Registry key path, e.g., "/Microsoft/Windows/CurrentVersion/Uninstall".
+        :param evidence_id: Optional. If provided, restricts the count to a single evidence item.
+                            Otherwise, counts children across all Windows systems in the project.
+        :return: Number of all descendants registry entries, or None if count could not be determined
+    """
     hql_query = r'type:registryEntry registryEntry.key:' + registry_key + r'/*'
     count = count_traces_with_hql(context=context, hql_query=hql_query, facet_value_to_count='registryEntry',
                                   evidence_id=evidence_id)
